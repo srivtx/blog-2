@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth, signOut } from "@/lib/firebase";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { toast } = useToast();
@@ -33,10 +34,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className="border-b">
+    <header className="border-b dark:border-gray-800">
       <div className="max-w-3xl mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="font-semibold text-xl">My Blog</Link>
+          <Link to="/" className="font-semibold text-xl dark:text-white">My Blog</Link>
           <nav className="flex items-center gap-6">
             <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
             
@@ -57,6 +58,7 @@ const Navbar = () => {
                 Login
               </Link>
             )}
+            <ThemeToggle />
           </nav>
         </div>
       </div>

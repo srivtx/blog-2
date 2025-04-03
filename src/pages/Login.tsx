@@ -59,17 +59,17 @@ const Login = () => {
   return (
     <Layout>
       <div className="flex justify-center items-center min-h-[60vh]">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md dark:border-gray-800 dark:bg-card">
           <CardHeader>
-            <CardTitle>Login</CardTitle>
-            <CardDescription>
+            <CardTitle className="dark:text-white">Login</CardTitle>
+            <CardDescription className="dark:text-gray-400">
               Login to your account to create or edit blog posts.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
+                <label htmlFor="email" className="text-sm font-medium dark:text-gray-300">
                   Email
                 </label>
                 <div className="relative">
@@ -82,12 +82,12 @@ const Login = () => {
                     placeholder="Email address"
                     required
                     autoComplete="email"
-                    className="pl-10"
+                    className="pl-10 dark:bg-gray-800 dark:border-gray-700"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium">
+                <label htmlFor="password" className="text-sm font-medium dark:text-gray-300">
                   Password
                 </label>
                 <div className="relative">
@@ -100,7 +100,7 @@ const Login = () => {
                     placeholder="Password"
                     required
                     autoComplete="current-password"
-                    className="pl-10"
+                    className="pl-10 dark:bg-gray-800 dark:border-gray-700"
                   />
                 </div>
               </div>
@@ -109,9 +109,9 @@ const Login = () => {
               </Button>
               
               <div className="relative my-4">
-                <Separator />
+                <Separator className="dark:bg-gray-700" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="bg-background px-2 text-xs text-muted-foreground">
+                  <span className="bg-background dark:bg-card px-2 text-xs text-muted-foreground">
                     OR
                   </span>
                 </div>
@@ -120,7 +120,7 @@ const Login = () => {
               <Button 
                 type="button" 
                 variant="outline" 
-                className="w-full" 
+                className="w-full dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" 
                 onClick={handleGoogleSignIn}
                 disabled={isGoogleLoading}
               >
