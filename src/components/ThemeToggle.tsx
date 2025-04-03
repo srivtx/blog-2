@@ -14,13 +14,13 @@ const ThemeToggle = () => {
           variant="ghost"
           size="icon"
           onClick={toggleTheme}
-          className="w-8 h-8 rounded-full"
+          className="w-8 h-8 rounded-full transition-colors duration-300"
           aria-label="Toggle theme"
         >
           {theme === "light" ? (
-            <Moon className="h-4 w-4" />
+            <Moon className="h-4 w-4 transition-transform duration-300" />
           ) : (
-            <Sun className="h-4 w-4" />
+            <Sun className="h-4 w-4 transition-transform duration-300" />
           )}
         </Button>
       </TooltipTrigger>

@@ -28,6 +28,10 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     // Update localStorage when theme changes
     localStorage.setItem("theme", theme);
     
+    // Add transition class to body before updating theme
+    document.documentElement.classList.add("transition-colors");
+    document.documentElement.classList.add("duration-300");
+    
     // Update document class for Tailwind dark mode
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
