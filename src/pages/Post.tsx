@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getPostBySlug, Post } from "@/lib/firebase";
+import { getPostBySlug } from "@/lib/firebase";
+import type { Post as PostType } from "@/lib/firebase";
 import Layout from "@/components/Layout";
 import PostContent from "@/components/PostContent";
 
@@ -9,7 +10,7 @@ const Post = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   
-  const [post, setPost] = useState<Post | null>(null);
+  const [post, setPost] = useState<PostType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
